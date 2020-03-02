@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise JS Basics</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<h1 id ="header">This is your first JS exercise</h1> <!--id er for at javaScript kan finde det-->
+
+<div>
+    <input id = "inputText" type = "text">
+</div>
+
+<div id = "text" hidden = "hidden"></div>
+<button id="buttonChange" onclick="getInputValue()">Click me</button>
+
+
+
+</body>
+<!-- Placing scripts at the bottom of the <body> element improves the display speed, because script interpretation slows down the display -->
+<script>
+// JQuery
+    $(document).ready(function()
+    {
+        $("#buttonChange").click(function()
+        {
+            changeTextOnButton();
+        });
+    });
+
+    function changeTextOnButton()
+    {
+        if ($("#buttonChange").text() == "Click me")
+        {
+            $("#inputText").val("Change me");
+            $("#buttonChange").text("Change text above and click me again!");
+        }
+        else if ($("#buttonChange").text() == "Click me again!")
+        {
+            $("#text").hide();
+            $("#buttonChange").text("Change text above and click me again!");
+        }
+        else
+        {
+            $("#text").show();
+            $("#buttonChange").text("Click me again!");
+            $("#text").html("Thank you for changing the input to: <b>" + $("#inputText").val() + "</b>");
+        }
+    }
+
+/*
+Just JavaScript
+    function getInputValue()
+    {
+        var change = document.getElementById("buttonChange");
+        var textFromUser = document.getElementById("text");
+
+        if (change.innerText === "Click me")
+        {
+            document.getElementById("inputText").value = "Change me";
+            change.innerText = "Change text above and click me again!";
+        }
+        else if (change.innerText === "Click me again!")
+        {
+            textFromUser.style.display = "none";
+            change.innerText = "Change text above and click me again!";
+        }
+        else
+        {
+            textFromUser.style.display = "block";
+            var userInputText = document.getElementById("inputText").value;
+            textFromUser.innerHTML = "Thank you for changing the input to: <b>" + userInputText + "</b>";
+            change.innerText = "Click me again!";
+        }
+    }
+
+ */
+</script>
+</html>
