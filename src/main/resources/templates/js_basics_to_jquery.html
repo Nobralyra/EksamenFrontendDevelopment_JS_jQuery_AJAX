@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Exercise JS Basics</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-<h1 id ="header">This is your first JS exercise</h1> <!--id er for at javaScript kan finde det-->
+<h1 id ="header">jQuery Demo - was JavaScript before</h1> <!--id er for at javaScript kan finde det-->
 
 <div>
     <input id = "inputText" type = "text">
@@ -15,12 +15,10 @@
 <div id = "text" hidden = "hidden"></div>
 <button id="buttonChange" onclick="getInputValue()">Click me</button>
 
-
-
 </body>
 <!-- Placing scripts at the bottom of the <body> element improves the display speed, because script interpretation slows down the display -->
 <script>
-// JQuery
+// jQuery
     $(document).ready(function()
     {
         $("#buttonChange").click(function()
@@ -31,12 +29,12 @@
 
     function changeTextOnButton()
     {
-        if ($("#buttonChange").text() == "Click me")
+        if ($("#buttonChange").text() === "Click me")
         {
             $("#inputText").val("Change me");
             $("#buttonChange").text("Change text above and click me again!");
         }
-        else if ($("#buttonChange").text() == "Click me again!")
+        else if ($("#buttonChange").text() === "Click me again!")
         {
             $("#text").hide();
             $("#buttonChange").text("Change text above and click me again!");
