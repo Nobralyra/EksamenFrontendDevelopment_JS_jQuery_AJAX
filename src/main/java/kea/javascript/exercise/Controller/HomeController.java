@@ -6,14 +6,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController
 {
     @GetMapping("/")
-    public String homePage ()
-    {
-        return "js_basics_to_jquery";
-    }
-    @GetMapping("/ajax")
     public String ajax ()
     {
         return "ajax";
     }
+
+    @GetMapping("/jquery")
+    public String homePage ()
+    {
+        return "js_basics_to_jquery";
+    }
+
+
+    /**
+     *  localhost:8383
+     *  ajax.html
+     */
 }
 
